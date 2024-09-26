@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="green">Green</button>
+    <button id="orange">Orange</button>
+    <script>
+        // lexiacal scoping - outer fuction ka scope inner function me access ho sakta hai
+        
+        function outer() {
+            let username = "Anshu";
+            function inner() {
+                console.log(`Inner Function ${username}`)
+            }
+            function innerTwo() {
+                console.log(`inner two ${username}`);
+            }
+            inner()
+            innerTwo()
+        }
+
+        // cluser - clouser return krta hai pure lexical scope ko 
+
+        function Fun() {
+            let name = "Mozila";
+
+            function inner() {
+                console.log("inner fuction of clouser", name);
+            }
+
+            return inner;
+        }
+
+        const myFun = Fun()
+
+        myFun()
+
+
+    </script>
+    <script>
+        // document.getElementById('green').onclick=function(){
+        //     document.body.style.backgroundColor=`green`
+        // }
+        // document.getElementById('orange').onclick=function(){
+        //     document.body.style.backgroundColor=`orange`
+        // }
+
+        function handler(color){
+            // document.body.style.backgroundColor=`${color}`;
+
+            return function(){
+                document.body.style.backgroundColor=`${color}`;
+            }
+
+        }
+
+        document.querySelector('#green').onclick=handler('green')
+        document.querySelector('#orange').onclick=handler('orange')
+    </script>
+</body>
+
+</html>

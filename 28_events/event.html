@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body style="background-color: #414141;">
+    <div class="container">
+        <ul id="images">
+            <li><img height="200 px" width="250px" id="ghost" src="image1.jpg" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="city" src="image2.jpg" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="night-city" src="image3.jpg" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="bugati" src="image4.jpg" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="eat" src="image5.png" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="code" src="image6.png" alt="Photoshop"></li>
+            <li><img height="200px" width="250px" id="walpaper" src="image7.jpg" alt="Photoshop"
+                    onclick="alert('clicked')"></li>
+            <li><img height="200px" width="250px" id="" src="image8.jpg" alt="Photoshop"></li>
+
+            <li><a style="color: #fefefe;" href="https://www.google.com" id="google">GOOGLE<google></a></li>
+        </ul>
+    </div>
+    <script>
+        // document.getElementById('ghost').onclick = function () {
+        //  alert('image1clicked')   
+        // } its not a best approach becoz its not allow more feature
+
+        // jQuery onclick
+
+        // type timestamp defaultPrevent
+        // clintX clintY screenX screenY 
+        // target toElement currentTarget srcElement
+        //altKey shiftKey crtlKey keyCode
+
+
+
+        // document.querySelector('#images').addEventListener('click',function(){
+        //     // alert('city clicked')
+        //     console.log("clicked inside ul")
+        // },true)
+
+
+        // document.querySelector('#ghost').addEventListener('click',function(){
+        //     // alert('city clicked')
+        //     console.log(`clicked ghost`)
+        // },true)
+
+        //true capturing mode
+
+
+        // document.querySelector('#images').addEventListener('click',function(){
+        //     console.log("clicked inside ul")
+        // },false)
+
+
+        // document.querySelector('#city').addEventListener('click',function(e){
+        //     e.stopPropagation()
+        //     console.log("clicked city")
+        // },false)
+
+        // // false is bubbling mode
+
+        // // false/true eventPropgation
+
+        // document.querySelector('#google').addEventListener('click',function(e){
+        //     e.preventDefault()
+        //     e.stopPropagation()
+        //     console.log("google Clicked")
+        // },false)
+
+        document.querySelector('#images').addEventListener('click', function (e) {
+            console.log(e.target.parentNode)
+            console.log("clicke inside images")
+
+            console.log(e.target.tagName)
+
+            if (e.target.tagName === 'IMG') {
+                console.log(e.target.id)
+                const removeit = e.target.parentNode
+                removeit.remove()
+            }
+
+
+            // removeit.parentNode.removeChild(removeit)
+
+        }, false)
+
+
+
+    </script>
+</body>
+
+</html>

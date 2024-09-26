@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyPressMagic</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* .color{
+            border: 1px solid red;
+            padding: 5px;
+
+        } */
+
+        .color table,
+        th,
+        td {
+            padding: 5px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="insert">
+            <div id="key">Press key and watch magic</div>
+        </div>
+    </div>
+
+    <script>
+        const insert = document.getElementById('insert')
+
+        window.addEventListener('keydown', (e) => {
+            insert.innerHTML = `
+            <div>
+                <table class="color">
+                    <tr>
+                        <th>Key</th>
+                        <th>KeyCode</th>
+                        <th>Code</th>
+                    </tr>
+                    <tr>
+                        
+                        <td>${e.Key}</td>
+                        <td>${e.KeyCode}</td>
+                        <td>${e.Code}</td>
+                    </tr>
+                </table>
+            </div> 
+            `;
+        })
+
+        console.log(window)
+
+
+    </script>
+</body>
+
+</html>

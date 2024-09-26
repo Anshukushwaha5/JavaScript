@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Div class="box">
+        <h2 id="heading">This is Anshu</h2>
+    </Div>
+    <button id="btn">Stop</button>
+    <script>
+        const chageText=()=>{
+             document.getElementById('heading').innerHTML="setTimeout"
+        }
+
+       const stop=setTimeout(chageText,1000) // event on reference
+        
+       document.querySelector('#btn').addEventListener('click',()=>{
+            clearTimeout(stop);
+            console.log("stopped"); 
+        })
+
+        
+
+        // setTimeout('btn',(e)=>{
+        //     // console.log("setTimeInterval is refer handler(callback) function")
+        //     document.getElementById('heading').innerHTML="setTimeout"
+
+        // },2000)
+
+
+
+        // document.querySelector('#btn').addEventListener('click',(e)=>{
+        //         setTimeout(()=>{
+        //             document.getElementById('heading').innerHTML="setTimeout"
+        //         },2000)
+        //     })
+
+
+
+    </script>
+</body>
+</html>

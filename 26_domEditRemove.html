@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom |selector </title>
+</head>
+<body>
+    <ul class="LangList">
+        <li class="Lang">
+            Python
+        </li>
+
+    </ul>
+</body>
+
+<script>
+    addLang=(langName)=>{
+        const li= document.createElement('li');
+        li.innerHTML=`${langName}`;
+        document.querySelector('.LangList').appendChild(li)
+        
+
+    }
+    addLang("js")
+    addLang("TypeScript")
+    addLang("java")
+
+    // function Optimized(langName){
+    //     const li=document.createElement('li');
+    //    li.appendChild(document.createTextNode(langName))
+    //     document.querySelector('.LangList').appendchild(li)
+
+    // }
+    // Optimized('xml')
+
+    //edit 
+
+    const secondLang=document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML="Mojo"
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondLang.replaceWith(newli)
+
+    const LastLanguage=document.querySelector("li:last-child")
+    LastLanguage.outerHTML="<li>C++</li>"
+
+    //remove
+
+    const firstchild=document.querySelector("li:first-child")
+    firstchild.remove()
+
+    
+    
+
+
+</script>
+</html>
